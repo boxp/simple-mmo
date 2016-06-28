@@ -1,5 +1,4 @@
-(ns simple-mmo.view.sprite
-  (:require [pixi-cljs.util :refer [get-prop set-prop!]]))
+(ns simple-mmo.view.sprite)
 
 (defn sprite
   [name]

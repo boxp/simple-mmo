@@ -7,7 +7,7 @@
 
 (defrecord Actor [name x y width height hp 
                   rotation status graphics
-                  obj speed])
+                  speed])
 
 (defn change-state
   [actor state]

@@ -1,18 +1,16 @@
 (ns simple-mmo.view.core
-  (:require [dommy.core :as dommy :refer-macros [sel1 sel]]
-            [pixi-cljs.core :as pixi]
-            [pixi-cljs.util :refer [get-prop update-prop! set-prop!]]))
+  (:require [dommy.core :as dommy :refer-macros [sel1 sel]]))
 
 (def width 640)
 (def height 360)
 
-(defonce renderer (pixi/renderer width height))
+(defonce renderer (js/PIXI.autoDetectRenderer width height))
 
-(defonce container (pixi/container))
+(defonce container (js/PIXI.Container.))
 
-(defonce stage (pixi/container))
+(defonce stage (js/PIXI.Container.))
 
-(defonce overlay (pixi/container))
+(defonce overlay (js/PIXI.Container.))
 
 (defonce frame-listener (atom #()))
 
@@ -29,10 +27,10 @@
         ratio-height (/ h height)
         ratio (if (< ratio-width ratio-height)
                 ratio-width ratio-height)]
-    (set-prop! renderer [:view :style :width] 
-               (str (* width ratio) "px"))
-    (set-prop! renderer [:view :style :height] 
-               (str (* height ratio) "px"))))
+    (set! (.. renderer -view -style width) 
+          (str (* width ratio) "px"))
+    (set! (.. renderer -view -style -height) 
+          (str (* height ratio) "px"))))
 
 (dommy/listen! js/window :resize on-resize)
 (on-resize)

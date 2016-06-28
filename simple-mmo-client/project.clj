@@ -6,13 +6,13 @@
 
   :min-lein-version "2.5.3"
   
-  :dependencies [[org.clojure/clojure "1.7.0"]
-                 [org.clojure/clojurescript "1.7.170"]
+  :dependencies [[org.clojure/clojure "1.8.0"]
+                 [org.clojure/clojurescript "1.9.89"]
                  [org.clojure/core.async "0.2.374"
                   :exclusions [org.clojure/tools.reader]]
                  ;;cljs
-                 [pixi-cljs "0.1.0-SNAPSHOT"]
-                 [peer-cljs "0.1.0-SNAPSHOT"]
+                 [cljsjs/pixi "3.0.10-0"]
+                 [cljsjs/rx "4.0.7-0"]
                  [prismatic/dommy "1.1.0"]
                  [org.omcljs/om "0.9.0"]
                  [prismatic/om-tools "0.3.12"]
